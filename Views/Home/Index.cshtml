@@ -1,0 +1,21 @@
+﻿@model BankSystem.Models.User
+@{
+    ViewBag.Title = "Home Page";
+}
+
+@using (Html.BeginForm("Index", "Home", FormMethod.Post))
+{
+    <div>@Html.Label("Username")</div>
+    <div class="col-md-3">
+        @Html.TextBoxFor(x => x.Name)
+        @Html.ValidationMessageFor(model => model.Name)
+    </div>
+    <div class="col-md-1">@Html.Label("Password")</div>
+    <div class="col-md-3">
+        @Html.PasswordFor(x => x.Password)
+        @Html.ValidationMessageFor(model => model.Password)
+    </div>
+    <div><input type="submit" value="Log In"/></div>
+}
+
+
